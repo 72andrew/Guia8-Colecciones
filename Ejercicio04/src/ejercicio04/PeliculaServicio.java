@@ -14,22 +14,25 @@ public class PeliculaServicio {
     private Scanner scan;
     private ArrayList<Pelicula> peliculas;
 
-    
     public PeliculaServicio() {
         this.peliculas = new ArrayList<>();
         this.scan = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
     }
-    
-    public void ordenarDuracionMenorAMayor(){
+
+    public void ordenarDuracionMenorAMayor() {
         Collections.sort(peliculas);
-        
+
     }
-    
-        public void ordenarDuracionMayorAMenor(){
-        Collections.sort(peliculas,new PeliculaComparadorDuracionMayorAMenor());
-        
+
+    public void ordenarDuracionMayorAMenor() {
+        Collections.sort(peliculas, new PeliculaComparadorDuracionMayorAMenor());
+
     }
-    
+
+    public void ordenarTitulo() {
+        Collections.sort(peliculas, new PeliculaJavaComparadorTitulo());
+    }
+
     public void ingresarNuevaPelicula() {
 
         String titulo;
@@ -73,7 +76,5 @@ public class PeliculaServicio {
             }
         }
     }
-    
-    
-    
+
 }

@@ -23,7 +23,8 @@ public class Principal04 {
             System.out.println("3 - Pelicula de mas de 1 hora");
             System.out.println("4 - Ordenar duracion (menor a mayor)");
             System.out.println("5 - Ordenar duracion (mayor a menor)");
-            System.out.println("6 - Salir");
+            System.out.println("6 - Ordenar por titulo Alfabeticamente");
+            System.out.println("7 - Salir");
             Scanner entrada = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
             opcion = entrada.nextInt();
             switch (opcion) {
@@ -45,6 +46,10 @@ public class Principal04 {
                     peliculaServicio.printArrayList();
                     break;
                 case 6:
+                    peliculaServicio.ordenarTitulo();
+                    peliculaServicio.printArrayList();
+                    break;
+                case 7:
                     salir = true;
                     break;
                 default:
